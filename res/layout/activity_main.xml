@@ -1,0 +1,62 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:id="@+id/relative"
+     >
+
+       <LinearLayout
+        android:id="@+id/linear222"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/test"
+        android:orientation="horizontal"
+        android:layout_marginBottom="100dip"
+        android:layout_alignParentBottom="true"
+         >
+
+        <View
+        android:id="@+id/drawview"
+        android:layout_width="fill_parent"
+        android:layout_height="100dip"
+        />
+
+	    </LinearLayout>
+       <Button
+        android:id="@+id/colorselect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="11" 
+        android:layout_above="@id/linear222"
+        />
+
+       <TextView
+           android:id="@+id/textView1"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_alignParentBottom="true"
+           android:layout_centerHorizontal="true"
+           android:layout_marginBottom="40dp"
+           android:text="TextView" />
+
+       <Button
+           android:id="@+id/screenbutton"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_alignParentLeft="true"
+           android:layout_alignParentTop="true"
+           android:layout_marginLeft="18dp"
+           android:layout_marginTop="52dp"
+           android:text="屏幕" />
+
+       <Button
+           android:id="@+id/flashlightbutton"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_below="@+id/screenbutton"
+           android:layout_marginTop="15dp"
+           android:layout_toRightOf="@+id/textView1"
+           android:text="闪光灯" />
+
+</RelativeLayout>
