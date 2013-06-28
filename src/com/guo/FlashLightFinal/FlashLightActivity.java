@@ -39,6 +39,7 @@ public class FlashLightActivity extends Activity {
 	private boolean Flashing=false;
 	private boolean FlashlightOpening=true;
 	private boolean SOSisOpening=false;
+	private boolean isNotificationing=true;
     private Timer timer;
     private  Handler myHandler;
 	private IntentFilter intentFilter_flashtime;
@@ -58,10 +59,10 @@ public class FlashLightActivity extends Activity {
         soslightbutton.setOnClickListener(new SOSLightClickListener());
         flashlightswitch.setOnClickListener(new FlashLightSwitchListener());
 		System.out.println("onCreate--->");
-
+        notificationOpen();
+        //开始亮灯  
+        flashlightOpen();
 } 
-    
-    
     @Override
 	protected void onResume() {
 		// TODO Auto-generated method stub
@@ -69,12 +70,14 @@ public class FlashLightActivity extends Activity {
 	      //打开照相机  
    	 //改变背景图片  
     //   view.setBackgroundResource(R.drawable.flashlight_on);  
-       //开始亮灯  
-        flashlightOpen();
-        notificationOpen();
+
 	}
-
-
+    
+	@Override
+	protected void onPause() {
+		// TODO Auto-generated method stub
+		super.onPause();
+	}
 	private void flashlightOpen(){
         //获取照相机参数
 	    camera = Camera.open(); 
@@ -86,9 +89,11 @@ public class FlashLightActivity extends Activity {
         //打开notification
     }
     private void flashlightClose(){
-    		camera.stopPreview();   
+    		camera.stopPreview();
+    		camera.setPreviewCallback(null);
         //关掉照相机  
         	camera.release();  
+       
     }
 
 class FlashLightSwitchListener implements OnClickListener{
@@ -223,6 +228,7 @@ class CloseFlashLightClickListener implements OnClickListener {
 	  	}
         notificationCancel();
 	     finish();  
+		overridePendingTransition(R.anim.zoomout,R.anim.zoomin);
     }  
 }
 private void notificationOpen(){
@@ -261,8 +267,10 @@ public boolean onKeyDown(int keyCode, KeyEvent event) {
 	  	if(FlashlightOpening){
 		    flashlightClose();
 		  	}
+	 	camera=null;  
          notificationCancel();
          finish();  
+ 		overridePendingTransition(R.anim.zoomout,R.anim.zoomin);
     }  
     return super.onKeyDown(keyCode, event);  
 }  

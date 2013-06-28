@@ -162,6 +162,7 @@ public class MainActivity extends Activity  {
 				Intent intent=new Intent();
 				intent.setClass(MainActivity.this, FlashLightActivity.class);
 				startActivity(intent);
+				overridePendingTransition(R.anim.zoomout,R.anim.zoomin);
 			}
     		
     	}
