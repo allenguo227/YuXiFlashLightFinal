@@ -45,6 +45,7 @@ public class MainActivity extends Activity  {
 	private int fullwidth;
 	private int partwidth;
 	private int screencolor;
+	private Button colorselect,screenButton,flashLightButton;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -53,9 +54,9 @@ public class MainActivity extends Activity  {
 		     //去掉标题栏   
 		  requestWindowFeature(Window.FEATURE_NO_TITLE);  
 		setContentView(R.layout.activity_main);
-		Button colorselect=(Button)findViewById(R.id.colorselect);
-		Button screenButton=(Button)findViewById(R.id.screenbutton);
-		Button flashLightButton=(Button)findViewById(R.id.flashlightbutton);
+		colorselect=(Button)findViewById(R.id.colorselect);
+		screenButton=(Button)findViewById(R.id.screenbutton);
+		flashLightButton=(Button)findViewById(R.id.flashlightbutton);
 		batterLevel=(TextView)findViewById(R.id.textView1);
 		ll=(LinearLayout)findViewById(R.id.linear222);
 		rl=(RelativeLayout)findViewById(R.id.relative);
@@ -188,25 +189,25 @@ public class MainActivity extends Activity  {
 					int touchwidth=(int) event.getX();
 					//System.out.println("event-->"+event.getX());
 					if(0<touchwidth&&touchwidth<partwidth){
-						rl.setBackgroundResource(R.color.red);
+						screenButton.setBackgroundResource(R.color.red);
 						screencolor=ColorMsg.RED;
 					}else if(partwidth<touchwidth&&touchwidth<(2*partwidth)){
-						rl.setBackgroundResource(R.color.orange);
+						screenButton.setBackgroundResource(R.color.orange);
 						screencolor=ColorMsg.ORANGE;
 					}else if(2*partwidth<touchwidth&&touchwidth<(3*partwidth)){
-						rl.setBackgroundResource(R.color.green);
+						screenButton.setBackgroundResource(R.color.green);
 						screencolor=ColorMsg.GREEN;
 					}else if(3*partwidth<touchwidth&&touchwidth<(4*partwidth)){
-						rl.setBackgroundResource(R.color.blue);
+						screenButton.setBackgroundResource(R.color.blue);
 						screencolor=ColorMsg.BLUE;
 				    }else if(4*partwidth<touchwidth&&touchwidth<(5*partwidth)){
-				    	rl.setBackgroundResource(R.color.yellow);
+				    	screenButton.setBackgroundResource(R.color.yellow);
 				    	screencolor=ColorMsg.YELLOW;
 				    }else if(5*partwidth<touchwidth&&touchwidth<(6*partwidth)){
-				    	rl.setBackgroundResource(R.color.purple);
+				    	screenButton.setBackgroundResource(R.color.purple);
 				    	screencolor=ColorMsg.PURPLE;
 				    }else if(6*partwidth<touchwidth&&touchwidth<(7*partwidth)){
-				    	rl.setBackgroundResource(R.color.white);
+				    	screenButton.setBackgroundResource(R.color.white);
 				    	screencolor=ColorMsg.WHITE;
 				    }
 					return true;

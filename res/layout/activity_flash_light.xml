@@ -5,32 +5,31 @@
     android:background="#00000000"
      >
 
-<ImageView
-    android:id="@+id/exitflashlightbutton"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_alignParentRight="true"
-    android:layout_alignParentTop="true"
-    android:layout_marginRight="76dp"
-    android:layout_marginTop="119dp"
-    android:background="@drawable/ic_launcher" />
-
-<ImageView
-    android:id="@+id/soslightbutton"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_alignParentLeft="true"
-    android:layout_alignParentTop="true"
-    android:layout_marginLeft="82dp"
-    android:layout_marginTop="60dp"
-    android:src="@drawable/ic_launcher" />
-
-<ImageView
+<Button
     android:id="@+id/flashlightswitch"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_alignTop="@+id/soslightbutton"
     android:layout_centerHorizontal="true"
-    android:src="@drawable/ic_launcher" />
+    android:text="闪光灯" />
+
+<ImageView
+    android:id="@+id/soslightbutton"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentTop="true"
+    android:layout_marginRight="34dp"
+    android:layout_marginTop="30dp"
+    android:layout_toLeftOf="@+id/flashlightswitch"
+    android:src="@drawable/sos" />
+
+<Button
+    android:id="@+id/exitflashlightbutton"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentRight="true"
+    android:layout_below="@+id/flashlightswitch"
+    android:layout_marginRight="24dp"
+    android:text="退出" />
 
 </RelativeLayout>

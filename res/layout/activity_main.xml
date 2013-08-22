@@ -9,7 +9,7 @@
         android:id="@+id/linear222"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/test"
+        android:background="@drawable/color_select"
         android:orientation="horizontal"
         android:layout_marginBottom="100dip"
         android:layout_alignParentBottom="true"
@@ -27,7 +27,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:text="11" 
+        android:text="color" 
         android:layout_above="@id/linear222"
         />
 
@@ -54,9 +54,10 @@
            android:id="@+id/flashlightbutton"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"
-           android:layout_below="@+id/screenbutton"
-           android:layout_marginTop="15dp"
-           android:layout_toRightOf="@+id/textView1"
-           android:text="闪光灯" />
+           android:layout_alignParentRight="true"
+           android:layout_alignTop="@+id/screenbutton"
+           android:layout_marginRight="24dp"
+           android:layout_marginTop="25dp"
+           android:text="背灯" />
 
 </RelativeLayout>

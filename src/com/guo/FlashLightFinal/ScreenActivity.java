@@ -107,8 +107,8 @@ public class ScreenActivity extends Activity {
 	private void setBackgroundColor(){
 		if(screencolor==ColorMsg.RED){
 			screenbackgroud.setBackgroundResource(R.color.red);
-		}else if(screencolor==ColorMsg.BLACK){
-			screenbackgroud.setBackgroundResource(R.color.black);
+		}else if(screencolor==ColorMsg.YELLOW){
+			screenbackgroud.setBackgroundResource(R.color.yellow);
 		}else if(screencolor==ColorMsg.BLUE){
 			screenbackgroud.setBackgroundResource(R.color.blue);
 		}else if(screencolor==ColorMsg.GREEN){
